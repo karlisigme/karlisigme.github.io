@@ -3,60 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Reset Will Fail</title>
+    <title>THE RESET DOSSIER</title>
     <style>
-        /* --- DESIGN SETTINGS --- */
+        /* --- CORE DESIGN --- */
         body {
-            background-color: #111;
-            color: #eee;
-            font-family: 'Courier New', Courier, monospace; /* Retro terminal look */
-            line-height: 1.6;
+            /* Background Image Setup */
+            background-image: url('Site-background-dark.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #050505; 
+            color: #ddd;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
-            padding: 0;
+            padding: 20px;
         }
 
         .container {
             max-width: 700px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.9); /* Darker background for contrast */
+            border: 1px solid #444;
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
         }
 
-        /* --- TYPOGRAPHY --- */
-        h1 {
-            font-size: 2.5rem;
-            border-bottom: 2px solid #ff4444; /* Red underline for emphasis */
-            padding-bottom: 10px;
+        /* --- HEADER & IMAGES --- */
+        header {
+            text-align: center;
             margin-bottom: 40px;
         }
 
-        h2 {
-            color: #ff4444;
-            margin-top: 50px;
+        h1 {
+            color: #fff;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            border-bottom: 2px solid #ff3333;
+            display: inline-block;
+            padding-bottom: 10px;
         }
 
-        p {
+        .meme-img {
+            display: block;
+            width: 200px; /* Slightly smaller to fit the dossier vibe */
+            margin: 20px auto;
+            border: 2px solid #ff3333;
+            filter: grayscale(100%); /* Makes the trollface look gritty/retro */
+            transition: filter 0.3s;
+        }
+
+        .meme-img:hover {
+            filter: grayscale(0%); /* Brings back color on hover */
+        }
+
+        /* --- THE REVEAL BUTTONS (ACCORDION) --- */
+        .accordion {
+            background-color: #111;
+            color: #ff3333; /* Hacker Red */
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: 1px solid #333;
+            text-align: left;
+            outline: none;
             font-size: 1.1rem;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .highlight {
-            background-color: #333;
-            padding: 2px 5px;
-            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
             font-weight: bold;
+            transition: 0.4s;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* --- FOOTER --- */
+        /* Hover effect for buttons */
+        .accordion:hover {
+            background-color: #222;
+            border-color: #ff3333;
+        }
+
+        /* Active state (when open) */
+        .active {
+            background-color: #ff3333;
+            color: #000; /* Text turns black for contrast */
+        }
+
+        /* The Hidden Content */
+        .panel {
+            padding: 0 18px;
+            background-color: #0a0a0a;
+            border-left: 2px solid #ff3333;
+            border-right: 1px solid #333;
+            border-bottom: 1px solid #333;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            opacity: 0.8;
+        }
+
+        .panel p {
+            padding: 20px 0;
+            margin: 0;
+        }
+
         footer {
-            margin-top: 80px;
-            border-top: 1px solid #333;
-            padding-top: 20px;
-            font-size: 0.8rem;
-            color: #666;
+            margin-top: 60px;
             text-align: center;
+            font-size: 0.8rem;
+            color: #555;
         }
     </style>
 </head>
@@ -64,37 +118,74 @@
 
     <div class="container">
         <header>
-            <h1>Why "The Great Meme Reset" Is Doomed</h1>
-            <p><strong>January 2026.</strong> The internet wants a factory reset. It wants to go back to 2012. Here is why that is impossible.</p>
+            <h1>Status: DOOMED</h1>
+            
+            <img src="Trollface.png" alt="Trollface" class="meme-img">
+            
+            <p style="color: #aaa;">
+                SUBJECT: "The Great Meme Reset" (2026)<br>
+                STATUS: Unsustainable<br>
+                INSTRUCTION: Click files below to declassify data.
+            </p>
         </header>
 
-        <section>
-            <h2>1. You Can't Digitize Nostalgia</h2>
-            <p>The "Reset" movement is built on the idea that 2012–2016 memes were inherently "better." They weren't better; <strong>we were just younger.</strong></p>
-            <p>Bringing back Rage Comics or MLG montages won't bring back the feeling of the internet in 2015. It will just feel like a forced museum exhibit. Culture moves forward, not backward.</p>
-        </section>
+        <button class="accordion">FILE 01: THE NOSTALGIA FALLACY <span>[+]</span></button>
+        <div class="panel">
+            <p>
+                The "Reset" relies on the lie that 2012 memes were quality content. They weren't. <br><br>
+                We are confusing <strong>quality</strong> with <strong>youth</strong>. You cannot patch the internet to a previous version because the userbase has fundamentally changed. The naivety of the early web is gone, replaced by hyper-irony.
+            </p>
+        </div>
 
-        <section>
-            <h2>2. The Velocity Problem</h2>
-            <p>In 2012, a meme lasted for months. Today, the lifecycle of a meme is measured in <span class="highlight">hours</span>.</p>
-            <p>The internet consumes content too fast now. Trying to force a slow-paced "classic" meme format into a TikTok-speed algorithm is like trying to play a VHS tape in a PlayStation 5. It simply doesn't fit the hardware of the modern web.</p>
-        </section>
+        <button class="accordion">FILE 02: THE VELOCITY PROBLEM <span>[+]</span></button>
+        <div class="panel">
+            <p>
+                <strong>2012 Speed:</strong> One meme per month.<br>
+                <strong>2026 Speed:</strong> One meme per hour.<br><br>
+                Modern algorithms require constant, high-speed feed turnover. Old meme formats (Impact font, Rage comics) are too slow to consume. They are static images in a video-first world. The algorithm will reject the Reset within 48 hours.
+            </p>
+        </div>
 
-        <section>
-            <h2>3. Chaos cannot be Planned</h2>
-            <p>The best memes are accidents. They are random, chaotic, and organic. "The Great Meme Reset" is a <strong>coordinated administrative effort</strong>.</p>
-            <p>You cannot schedule fun on a calendar. The moment you try to organize a meme revolution, it becomes homework. And the internet hates homework.</p>
-        </section>
-
-        <section>
-            <h2>The Conclusion</h2>
-            <p>The Reset will happen for exactly 48 hours. It will be ironic. Then, the internet will get bored, and we will return to the chaos. As we always do.</p>
-        </section>
+        <button class="accordion">FILE 03: MANUFACTURED CHAOS <span>[+]</span></button>
+        <div class="panel">
+            <p>
+                True memes are accidents. The Reset is a scheduled event. <br><br>
+                Anything scheduled is "cringe" by default. The moment the Reset begins, the counter-culture will immediately mock it for trying too hard. The Reset isn't a movement; it's a roleplay session that most people will refuse to join.
+            </p>
+        </div>
 
         <footer>
-            <p>Created by [Your Username] | Hosted on GitHub Pages</p>
+            <p>END OF REPORT.</p>
         </footer>
     </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                // Toggle the 'active' class (changes color)
+                this.classList.toggle("active");
+
+                // Toggle the plus/minus sign
+                var span = this.querySelector('span');
+                if (this.classList.contains("active")) {
+                    span.textContent = "[-]";
+                } else {
+                    span.textContent = "[+]";
+                }
+
+                // Toggle the visibility of the panel
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
 
 </body>
 </html>
