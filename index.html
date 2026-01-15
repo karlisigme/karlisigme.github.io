@@ -7,8 +7,8 @@
     <style>
         /* --- CORE DESIGN --- */
         body {
-            /* Background Image Setup */
-            background-image: url('Site-background-dark.webp');
+            /* Using the file 'images[1]' you uploaded as the background */
+            background-image: url('images[1]'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -16,50 +16,69 @@
             color: #ddd;
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            overflow-x: hidden; 
+            position: relative;
         }
 
+        /* --- THE FLOATING GHOST LAYER --- */
+        #ghost-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; 
+            z-index: 0; 
+            overflow: hidden;
+        }
+
+        .ghost {
+            position: absolute;
+            opacity: 0;
+            /* This turns the colorful memes into Black & White Ghosts */
+            filter: grayscale(100%) contrast(120%) brightness(0.8); 
+            animation: floatAnim linear infinite;
+        }
+
+        @keyframes floatAnim {
+            0% { transform: translateY(110vh) rotate(0deg) scale(0.8); opacity: 0; }
+            20% { opacity: 0.25; } 
+            80% { opacity: 0.25; }
+            100% { transform: translateY(-10vh) rotate(20deg) scale(1); opacity: 0; }
+        }
+
+        /* --- MAIN CONTAINER --- */
         .container {
+            position: relative;
+            z-index: 10; 
             max-width: 700px;
             margin: 40px auto;
             padding: 30px;
-            background-color: rgba(0, 0, 0, 0.9); /* Darker background for contrast */
+            background-color: rgba(0, 0, 0, 0.92); 
             border: 1px solid #444;
-            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            box-shadow: 0 0 50px rgba(0,0,0,1);
         }
 
-        /* --- HEADER & IMAGES --- */
+        /* --- HEADER & BANNER --- */
         header {
             text-align: center;
             margin-bottom: 40px;
         }
 
-        h1 {
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            border-bottom: 2px solid #ff3333;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .meme-img {
-            display: block;
-            width: 200px; /* Slightly smaller to fit the dossier vibe */
-            margin: 20px auto;
+        .main-banner {
+            width: 100%;
+            height: auto;
             border: 2px solid #ff3333;
-            filter: grayscale(100%); /* Makes the trollface look gritty/retro */
-            transition: filter 0.3s;
+            margin-bottom: 20px;
+            /* Gritty newspaper filter for the protest sign */
+            filter: grayscale(100%) contrast(110%); 
         }
 
-        .meme-img:hover {
-            filter: grayscale(0%); /* Brings back color on hover */
-        }
-
-        /* --- THE REVEAL BUTTONS (ACCORDION) --- */
+        /* --- THE REVEAL BUTTONS --- */
         .accordion {
             background-color: #111;
-            color: #ff3333; /* Hacker Red */
+            color: #ff3333; 
             cursor: pointer;
             padding: 18px;
             width: 100%;
@@ -76,19 +95,16 @@
             align-items: center;
         }
 
-        /* Hover effect for buttons */
         .accordion:hover {
             background-color: #222;
             border-color: #ff3333;
         }
 
-        /* Active state (when open) */
         .active {
             background-color: #ff3333;
-            color: #000; /* Text turns black for contrast */
+            color: #000; 
         }
 
-        /* The Hidden Content */
         .panel {
             padding: 0 18px;
             background-color: #0a0a0a;
@@ -98,7 +114,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         .panel p {
@@ -116,16 +132,16 @@
 </head>
 <body>
 
+    <div id="ghost-layer"></div>
+
     <div class="container">
         <header>
-            <h1>Status: DOOMED</h1>
-            
-            <img src="Trollface.png" alt="Trollface" class="meme-img">
+            <img src="_118953017_gettyimages-1296256380.jpg[1].webp" alt="NO GREAT RESET" class="main-banner">
             
             <p style="color: #aaa;">
                 SUBJECT: "The Great Meme Reset" (2026)<br>
-                STATUS: Unsustainable<br>
-                INSTRUCTION: Click files below to declassify data.
+                STATUS: <span style="color:red; font-weight:bold;">FAILURE IMMINENT</span><br>
+                INSTRUCTION: Declassify files below.
             </p>
         </header>
 
@@ -133,7 +149,7 @@
         <div class="panel">
             <p>
                 The "Reset" relies on the lie that 2012 memes were quality content. They weren't. <br><br>
-                We are confusing <strong>quality</strong> with <strong>youth</strong>. You cannot patch the internet to a previous version because the userbase has fundamentally changed. The naivety of the early web is gone, replaced by hyper-irony.
+                We are confusing <strong>quality</strong> with <strong>youth</strong>. You cannot patch the internet to a previous version because the userbase has fundamentally changed.
             </p>
         </div>
 
@@ -142,48 +158,69 @@
             <p>
                 <strong>2012 Speed:</strong> One meme per month.<br>
                 <strong>2026 Speed:</strong> One meme per hour.<br><br>
-                Modern algorithms require constant, high-speed feed turnover. Old meme formats (Impact font, Rage comics) are too slow to consume. They are static images in a video-first world. The algorithm will reject the Reset within 48 hours.
+                Old meme formats (Advice Animals, Rage Comics) are too slow to consume. They are static images in a video-first world. The algorithm will reject the Reset within 48 hours.
             </p>
         </div>
 
         <button class="accordion">FILE 03: MANUFACTURED CHAOS <span>[+]</span></button>
         <div class="panel">
             <p>
-                True memes are accidents. The Reset is a scheduled event. <br><br>
-                Anything scheduled is "cringe" by default. The moment the Reset begins, the counter-culture will immediately mock it for trying too hard. The Reset isn't a movement; it's a roleplay session that most people will refuse to join.
+                True memes are accidents (like "The Way"). The Reset is a scheduled event. <br><br>
+                Anything scheduled is "cringe" by default. The Reset isn't a movement; it's a roleplay session that most people will refuse to join.
             </p>
         </div>
 
         <footer>
-            <p>END OF REPORT.</p>
+            <p>Let the ghosts rest.</p>
         </footer>
     </div>
 
     <script>
+        // 1. ACCORDION LOGIC
         var acc = document.getElementsByClassName("accordion");
         var i;
-
         for (i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
-                // Toggle the 'active' class (changes color)
                 this.classList.toggle("active");
-
-                // Toggle the plus/minus sign
                 var span = this.querySelector('span');
-                if (this.classList.contains("active")) {
-                    span.textContent = "[-]";
-                } else {
-                    span.textContent = "[+]";
-                }
-
-                // Toggle the visibility of the panel
+                if (this.classList.contains("active")) { span.textContent = "[-]"; } 
+                else { span.textContent = "[+]"; }
                 var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                } 
+                if (panel.style.maxHeight) { panel.style.maxHeight = null; } 
+                else { panel.style.maxHeight = panel.scrollHeight + "px"; } 
             });
+        }
+
+        // 2. GHOST MEME ENGINE
+        const layer = document.getElementById('ghost-layer');
+        
+        // THESE ARE YOUR EXACT FILES
+        const images = [
+            'flat,1000x1000,075,f.u2[1].jpg',                // Knuckles
+            '250px-First_Rage_Comic[1].jpg',                // Rage Comic
+            'advice-dog-steal-candy-480x480[1].jpeg'        // Advice Dog
+        ];
+        
+        const density = 20; // Number of ghosts
+
+        for (let j = 0; j < density; j++) {
+            let img = document.createElement('img');
+            let randomSrc = images[Math.floor(Math.random() * images.length)];
+            
+            img.src = randomSrc;
+            img.className = 'ghost';
+            img.style.left = Math.random() * 90 + 'vw'; 
+            
+            let size = Math.floor(Math.random() * 150) + 50; 
+            img.style.width = size + 'px';
+            
+            let duration = Math.floor(Math.random() * 20) + 15;
+            img.style.animationDuration = duration + 's';
+            
+            let delay = Math.floor(Math.random() * 20);
+            img.style.animationDelay = '-' + delay + 's'; 
+
+            layer.appendChild(img);
         }
     </script>
 
