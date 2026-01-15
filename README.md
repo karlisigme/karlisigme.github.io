@@ -1,1 +1,1 @@
-# karlisigme.github.io
+# whythegreatmemeresetwontlast.io
